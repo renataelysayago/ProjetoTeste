@@ -26,6 +26,18 @@ namespace ProjetoTeste.Controllers
         {
             return Ok(this.userService.Post(userViewModel));
         }
+
+        [HttpGet("{id}")]
+        public IActionResult GetById(string id)
+        { 
+            return Ok(this.userService.GetById(id));
+        }
+
+        [HttpPut]
+        public IActionResult Put(UserViewModel userViewModel)
+        {
+            return Ok(this.userService.Put(userViewModel));
+        }
     }
 }
     

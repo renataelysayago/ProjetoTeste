@@ -1,7 +1,5 @@
 ﻿using ProjetoTeste.Application.ViewModels;
-using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace ProjetoTeste.Application.Interfaces
 {
@@ -9,5 +7,7 @@ namespace ProjetoTeste.Application.Interfaces
     {
         List<UserViewModel> Get();
         bool Post(UserViewModel userViewModel);
+        UserViewModel GetById(string id);
+        bool Put(UserViewModel userViewModel);
     }
 }

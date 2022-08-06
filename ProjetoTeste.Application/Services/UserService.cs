@@ -26,26 +26,38 @@ namespace ProjetoTeste.Application.Services
 
             _usersViewModel = mapper.Map<List<UserViewModel>>(_users);
 
-            //foreach (Domain.Entities.User user in _users)
-            //    _usersViewModel.Add
-
-           // _usersViewModel.Add(new UserViewModel { Id = user.Id, Email = user.Email, Name = user.Name });
-
             return _usersViewModel;
         }
 
         public bool Post(UserViewModel userViewModel)
         {
-            //User _user = new Domain.Entities.User
-            //{
-            //    Id = Guid.NewGuid(),
-            //    Email = userViewModel.Email,
-            //    Name = userViewModel.Name
-            //};
-
             User _user = mapper.Map<User>(userViewModel);
 
             this.userRepository.Create(_user);
+            return true;
+        }
+
+        public UserViewModel GetById(string id)
+        {
+            if (!Guid.TryParse(id, out Guid userId))
+                throw new Exception("Id do usuário não é válido");
+
+            User _user = this.userRepository.Find(x => x.Id == userId && !x.IsDeleted);
+            if (_user == null)
+                throw new Exception("Usuário não encontrado");
+
+            return mapper.Map<UserViewModel>(_user);
+        }
+
+        public bool Put(UserViewModel userViewModel)
+        {
+            User _user = this.userRepository.Find(x => x.Id == userViewModel.Id && !x.IsDeleted);
+            if (_user == null)
+                throw new Exception("Usuário não encontrado");
+
+            _user = mapper.Map<User>(userViewModel);
+            this.userRepository.Update(_user);
+
             return true;
         }
     }
