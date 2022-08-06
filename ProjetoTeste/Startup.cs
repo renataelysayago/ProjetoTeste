@@ -8,6 +8,7 @@ using Microsoft.Extensions.Hosting;
 using ProjetoTeste.Application.AutoMapper;
 using ProjetoTeste.Data.Context;
 using ProjetoTeste.IoC;
+using ProjetoTeste.Swagger;
 
 namespace ProjetoTeste
 {
@@ -30,6 +31,7 @@ namespace ProjetoTeste
             NativeInjector.RegisterServices(services);
 
             services.AddAutoMapper(typeof(AutoMapperSetup));
+            services.AddSwaggerConfiguration();
 
             // In production, the Angular files will be served from this directory
             services.AddSpaStaticFiles(configuration =>
@@ -51,6 +53,8 @@ namespace ProjetoTeste
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
+
+            app.UseSwaggerConfiguration();
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
