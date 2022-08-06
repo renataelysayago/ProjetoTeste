@@ -60,5 +60,17 @@ namespace ProjetoTeste.Application.Services
 
             return true;
         }
+
+        public bool Delete(string id)
+        {
+            if (!Guid.TryParse(id, out Guid userId))
+                throw new Exception("Id do usuário não é válido");
+
+            User _user = this.userRepository.Find(x => x.Id == userId && !x.IsDeleted);
+            if (_user == null)
+                throw new Exception("Usuário não encontrado");            
+
+            return this.userRepository.Delete(_user);
+        }
     }
 }

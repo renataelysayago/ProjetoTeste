@@ -38,6 +38,12 @@ namespace ProjetoTeste.Controllers
         {
             return Ok(this.userService.Put(userViewModel));
         }
+
+        [HttpDelete("{id}")]
+        public IActionResult Delete(string id)
+        {
+            return Ok(this.userService.Delete(id));
+        }
     }
 }
     
