@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using ProjetoTeste.Application.Interfaces;
+using ProjetoTeste.Application.ViewModels;
 
 namespace ProjetoTeste.Controllers
 {
@@ -18,6 +19,12 @@ namespace ProjetoTeste.Controllers
         public IActionResult Get()
         {
             return Ok(this.userService.Get());
+        }
+
+        [HttpPost]
+        public IActionResult Post(UserViewModel userViewModel)
+        {
+            return Ok(this.userService.Post(userViewModel));
         }
     }
 }

@@ -2,6 +2,7 @@
 using ProjetoTeste.Application.ViewModels;
 using ProjetoTeste.Domain.Entities;
 using ProjetoTeste.Domain.Interfaces;
+using System;
 using System.Collections.Generic;
 
 namespace ProjetoTeste.Application.Services
@@ -23,6 +24,19 @@ namespace ProjetoTeste.Application.Services
                 _usersViewModel.Add(new UserViewModel { Id = user.Id, Email = user.Email, Name = user.Name });
 
             return _usersViewModel;
+        }
+
+        public bool Post(UserViewModel userViewModel)
+        {
+            User _user = new User
+            {
+                Id = Guid.NewGuid(),
+                Email = userViewModel.Email,
+                Name = userViewModel.Name
+            };
+
+            this.userRepository.Create(_user);
+            return true;
         }
     }
 }

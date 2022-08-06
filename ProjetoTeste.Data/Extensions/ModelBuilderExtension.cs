@@ -1,13 +1,43 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using ProjetoTeste.Domain.Entities;
+using ProjetoTeste.Domain.Models;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace ProjetoTeste.Data.Extensions
 {
     public static class ModelBuilderExtension
     {
+        public static ModelBuilder ApplyGlobalConfiguration(this ModelBuilder builder)
+        {
+            foreach (var entityType in builder.Model.GetEntityTypes())
+            {
+                foreach (var item in entityType.GetProperties())
+                {
+                    switch (item.Name)
+                    {
+                        case nameof(Entity.Id):
+                            item.IsKey();
+                            break;
+                        case nameof(Entity.DateUpdated):
+                            item.IsNullable = true;
+                            break;
+                        case nameof(Entity.DateCreated):
+                            item.IsNullable = false;
+                            item.SetDefaultValue(DateTime.Now);
+                            break;
+                        case nameof(Entity.IsDeleted):
+                            item.IsNullable = false;
+                            item.SetDefaultValue(false);
+                            break;
+                        default:
+                            break;
+                    }
+                }
+            }
+
+            return builder;
+        }
+
         public static ModelBuilder SeedData(this ModelBuilder builder)
         {
             builder.Entity<User>().HasData(
