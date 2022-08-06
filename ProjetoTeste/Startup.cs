@@ -5,6 +5,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using ProjetoTeste.Application.AutoMapper;
 using ProjetoTeste.Data.Context;
 using ProjetoTeste.IoC;
 
@@ -27,6 +28,8 @@ namespace ProjetoTeste
             services.AddDbContext<ProjetoTesteContext>(opt => opt.UseSqlServer(Configuration.GetConnectionString("ProjetoTesteDB")).EnableSensitiveDataLogging());
 
             NativeInjector.RegisterServices(services);
+
+            services.AddAutoMapper(typeof(AutoMapperSetup));
 
             // In production, the Angular files will be served from this directory
             services.AddSpaStaticFiles(configuration =>
