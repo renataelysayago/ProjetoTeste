@@ -27,6 +27,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProjetoTeste.IoC", "Projeto
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjetoTeste.Swagger", "ProjetoTeste.Swagger\ProjetoTeste.Swagger.csproj", "{6F7FD919-3795-4693-ACBC-DF11D8E9FFE0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjetoTeste.Auth", "ProjetoTeste.Auth\ProjetoTeste.Auth.csproj", "{0A2F0130-3294-479C-BED4-8E59B8473083}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -57,6 +59,10 @@ Global
 		{6F7FD919-3795-4693-ACBC-DF11D8E9FFE0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6F7FD919-3795-4693-ACBC-DF11D8E9FFE0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6F7FD919-3795-4693-ACBC-DF11D8E9FFE0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0A2F0130-3294-479C-BED4-8E59B8473083}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0A2F0130-3294-479C-BED4-8E59B8473083}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0A2F0130-3294-479C-BED4-8E59B8473083}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0A2F0130-3294-479C-BED4-8E59B8473083}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -70,6 +76,7 @@ Global
 		{35DBB8F5-3911-4373-AA4C-5580DF91B880} = {949EFF69-913E-4D30-9EF4-4FA2D39D8FE7}
 		{08AEBAEA-84D7-4B69-9604-01225406A87B} = {64129992-9916-42AA-AA00-416637A7D838}
 		{6F7FD919-3795-4693-ACBC-DF11D8E9FFE0} = {64129992-9916-42AA-AA00-416637A7D838}
+		{0A2F0130-3294-479C-BED4-8E59B8473083} = {64129992-9916-42AA-AA00-416637A7D838}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {50CB9EB5-D437-4877-980A-F2CA5E242033}

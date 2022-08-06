@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using ProjetoTeste.Application.Interfaces;
 using ProjetoTeste.Application.ViewModels;
+using ProjetoTeste.Auth.Services;
 using ProjetoTeste.Domain.Entities;
 using ProjetoTeste.Domain.Interfaces;
 using System;
@@ -71,6 +72,16 @@ namespace ProjetoTeste.Application.Services
                 throw new Exception("Usuário não encontrado");            
 
             return this.userRepository.Delete(_user);
+        }
+
+        public UserAuthenticateResponseViewModel Authenticate(UserAuthenticateRquestViewModel user)
+        {
+            User _user = this.userRepository.Find(x => !x.IsDeleted && x.Email.ToLower() == user.Email.ToLower());
+
+            if (_user == null)
+                throw new Exception("Usuário não encontrado");
+
+            return new UserAuthenticateResponseViewModel(mapper.Map<UserViewModel>(_user), TokenService.GenerateToken(_user));
         }
     }
 }

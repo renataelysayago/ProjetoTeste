@@ -44,6 +44,12 @@ namespace ProjetoTeste.Controllers
         {
             return Ok(this.userService.Delete(id));
         }
+
+        [HttpPost("authenticate")]
+        public IActionResult Authenticate(UserAuthenticateRquestViewModel userViewModel)
+        {
+            return Ok(this.userService.Authenticate(userViewModel));
+        }
     }
 }
     
