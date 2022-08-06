@@ -30,7 +30,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\ProjetoTeste.Application\ProjetoTeste.Application.csproj" />
     <ProjectReference Include="..\ProjetoTeste.Data\ProjetoTeste.Data.csproj" />
+    <ProjectReference Include="..\ProjetoTeste.IoC\ProjetoTeste.IoC.csproj" />
   </ItemGroup>
 
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">
