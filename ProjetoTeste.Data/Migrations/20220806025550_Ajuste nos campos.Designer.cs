@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ProjetoTeste.Data.Context;
 
 namespace ProjetoTeste.Data.Migrations
 {
     [DbContext(typeof(ProjetoTesteContext))]
-    partial class ProjetoTesteContextModelSnapshot : ModelSnapshot
+    [Migration("20220806025550_Ajuste nos campos")]
+    partial class Ajustenoscampos
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -50,7 +52,7 @@ namespace ProjetoTeste.Data.Migrations
                         new
                         {
                             Id = new Guid("18f0ad2d-e725-48f9-8020-d08f463bf5aa"),
-                            DateCreated = new DateTime(2022, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateCreated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "userdefault@gmail.com",
                             IsDeleted = false,
                             Name = "User Default"

@@ -11,7 +11,7 @@ namespace ProjetoTeste.Data.Extensions
         public static ModelBuilder SeedData(this ModelBuilder builder)
         {
             builder.Entity<User>().HasData(
-                new User { Id = Guid.Parse("18f0ad2d-e725-48f9-8020-d08f463bf5aa"), Name = "User Default", Email = "userdefault@gmail.com" }
+                new User { Id = Guid.Parse("18f0ad2d-e725-48f9-8020-d08f463bf5aa"), Name = "User Default", Email = "userdefault@gmail.com", DateCreated = new DateTime(2022,2,2), IsDeleted = false, DateUpdated = null }
                 );
 
             return builder;
