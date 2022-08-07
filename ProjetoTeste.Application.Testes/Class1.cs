@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ProjetoTeste.Data
+namespace ProjetoTeste.Application.Testes
 {
     public class Class1
     {

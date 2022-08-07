@@ -1,9 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using ProjetoTeste.Domain.Entities;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace ProjetoTeste.Data.Mappings
 {
@@ -13,6 +10,7 @@ namespace ProjetoTeste.Data.Mappings
         {
             builder.Property(x => x.Id).IsRequired();
             builder.Property(x => x.Name).IsRequired().HasMaxLength(100);
+            builder.Property(x => x.Password).IsRequired().HasDefaultValue("SenhaInicial");
         }
     }
 }
