@@ -7,8 +7,8 @@ body {
     font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
-@import 'mixins';
-@import 'color-variables';
+@import 'theme/mixins.scss';
+@import 'theme/color-variables.scss';
 
 /* Defições de fonte */
 
