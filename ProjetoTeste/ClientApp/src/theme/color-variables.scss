@@ -1,0 +1,23 @@
+@import '~@angular/material/theming';
+@import 'projeto-teste-colors.scss';
+
+// Configuração das cores de fonte
+$font-high-emphasis: rgba(0,0,0,.87);
+$font-medium-emphasis: rgba(0,0,0,.6);
+$font-low-emphasis: rgba(0,0,0,.54);
+$font-disabled: rgba(0,0,0,.38);
+$font-high-disabled: rgba(0,0,0,.08);
+$font-primary: mat-color($projeto-teste-theme-primary);
+$font-middle-primary: rgba(31, 42, 88, .1);
+$font-accent: mat-color($projeto-teste-theme-accent);
+$font-middle-accent: #0C2AA333;
+$projeto-teste-select: rgba(240, 250, 250, 1);
+
+// Configuração das cores de status do sistema
+$color-status-urgent: #FF0F0F;
+$color-status-resolved: #4CAF50;
+$color-status-pendent: #FF8F00;
+$color-status-with-reservation: #605CA8;
+$color-status-prioritize: #BC51A5;
+$color-status-no-info: #6AB0AA;
+$color-status-waiting: #9E9E9E;

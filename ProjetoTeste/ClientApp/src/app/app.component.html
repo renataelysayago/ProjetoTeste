@@ -1,6 +1,44 @@
-<body>
-  <app-nav-menu></app-nav-menu>
-  <div class="container">
-    <router-outlet></router-outlet>
-  </div>
-</body>
+<div class='container-root'>
+    <div *ngIf="isLoggedIn$ | async">
+        <mat-toolbar color='primary' class='container-toolbar mat-elevation-z4'>
+            <div class='menu-control'>
+                <button type='button' aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()">
+                    <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+                </button>
+                <img class="logo-toolbar" src="/assets/img/prontaban-logo-para-fundo-roxo.svg" />
+                <button class="version-button" mat-icon-button (click)="mostrarVersoes()">
+                    <h6 class="version-font">1.0.0.0</h6>
+                </button>
+            </div>
+            <div class="inline-element">
+                <!--<button mat-icon-button (click)="openAjuda()" matTooltip="Ajuda" matTooltipPosition="below" disableRipple="true">
+                  <mat-icon class="help">help_outline</mat-icon>
+                </button>-->
+                <button mat-icon-button [matMenuTriggerFor]="menuOpcoes" matTooltip="Opções" matTooltipPosition="below" disableRipple="true">
+                    <mat-icon class="user">account_circle</mat-icon>
+                </button>
+                <mat-menu #menuOpcoes="matMenu">
+                    <button mat-menu-item (click)="onLogout();">
+                        <mat-icon>exit_to_app</mat-icon>
+                        Sair
+                    </button>
+                </mat-menu>
+                <h3 class="user-font" *ngIf="!isMobile">{{getLogin()}}</h3>
+            </div>
+        </mat-toolbar>
+    </div>
+    <mat-sidenav-container class="prnta-sidenav-container background-color">
+        <mat-sidenav #drawer class='sidenav' color="primary" [fixedInViewport]="true" [attr.role]=" 'dialog' "
+                     [mode]="'over'" [(opened)]="drawerOpened">
+            <prnta-menu [menuDrawer]="drawer">
+            </prnta-menu>
+        </mat-sidenav>
+        <mat-sidenav-content style="background-color: #EAEAEA">
+            <div class="content-body">
+                <div class="content-outlet">
+                    <router-outlet></router-outlet>
+                </div>
+            </div>
+        </mat-sidenav-content>
+    </mat-sidenav-container>
+</div>

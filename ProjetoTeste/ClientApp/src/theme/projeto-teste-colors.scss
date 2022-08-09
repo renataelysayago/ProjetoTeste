@@ -1,0 +1,26 @@
+@import '~@angular/material/theming';
+
+$mat-primary: (
+  100: #5A2467,
+  500: #5A2467,
+  700: #5A2467,
+  A100: #ffffff,
+  contrast: (
+    500: #ffffff,
+    A100: #000000,
+  )
+);
+
+$mat-accent: (
+  100: #41C1BE,
+  500: #41C1BE,
+  700: #41C1BE,
+  A100: #ffffff,
+  contrast: (
+    500: #ffffff,
+    A100: #000000,
+  )
+);
+
+$projeto-teste-theme-primary: mat-palette($mat-primary);
+$projeto-teste-theme-accent: mat-palette($mat-accent);

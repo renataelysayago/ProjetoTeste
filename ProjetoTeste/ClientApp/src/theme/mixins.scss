@@ -1,0 +1,31 @@
+@mixin sm {
+  @media (min-width: 600px) {
+    @content;
+  }
+}
+
+@mixin md {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin lg {
+  @media (min-width: 960px) {
+    @content;
+  }
+}
+
+@mixin flex-gap($gap, $element) {
+  --gap: #{$gap};
+  flex: 1;
+  display: inline-flex;
+  flex-wrap: wrap;
+  margin: calc(-1 * var(--gap)) 0 0 calc(-1 * var(--gap));
+  width: calc(100% + var(--gap));
+
+  #{$element} {
+    margin: var(--gap) 0 0 var(--gap);
+  }
+}
+

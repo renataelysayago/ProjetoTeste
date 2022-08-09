@@ -1,0 +1,54 @@
+<img src="/assets/img/oil_sea_rig.png" alt="image" class="background-image">
+<div class="background">
+
+  <div class="content">
+    <mat-card style="width: 435px;">
+
+      <mat-card-content style="width: 100%">
+        <img src="/assets/img/prontaban-logo-para-fundo-branco.svg" alt="image" class="header__title">
+
+        <form [formGroup]="form" (ngSubmit)="login()">
+
+          <mat-form-field [hideRequiredMarker]="true">
+            <mat-label>Usuario</mat-label>
+            <input type="text" matInput formControlName="username" required>
+            <mat-icon matPrefix class="mat-icon-opacity">person</mat-icon>
+
+            <mat-error>
+              Informe a chave
+            </mat-error>
+          </mat-form-field>
+
+          <mat-form-field [hideRequiredMarker]="true">
+            <mat-label>Senha</mat-label>
+            <input type="password" matInput formControlName="password" required>
+            <mat-icon matPrefix class="mat-icon-opacity">lock</mat-icon>
+
+            <mat-error>
+              Informe a senha
+            </mat-error>
+          </mat-form-field>
+          <button type="submit" mat-raised-button color="accent">Entrar</button>
+
+        </form>
+
+        <div class="footer">
+          <div class="footer__error-msg" *ngIf="errorMsg !== ''">
+            {{errorMsg}}
+          </div>
+          <div class="footer__system-version"><small></small></div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+
+    <div class="wrapper" style="margin-top: 100px; width: 435px;">
+      <div class="left">
+        <img src="/assets/img/logoTecgraf.svg" alt="image">
+      </div>
+      <div class="right">
+        <img src="/assets/img/logo_petrobras_login.svg" alt="image">
+      </div>
+    </div>
+  </div>
+</div>
+

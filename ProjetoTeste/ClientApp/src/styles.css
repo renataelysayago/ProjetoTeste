@@ -1,16 +1,327 @@
-/* You can add global styles to this file, and also import other style files */
-
-/* Provide sufficient contrast against white background */
-a {
-  color: #0366d6;
+html, body {
+    height: 100%;
 }
 
-code {
-  color: #e01a76;
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
-.btn-primary {
-  color: #fff;
-  background-color: #1b6ec2;
-  border-color: #1861ac;
+@import 'mixins';
+@import 'color-variables';
+
+/* Defições de fonte */
+
+.primary-color {
+    color: $font-primary;
+}
+
+.accent-color {
+    color: $font-accent;
+}
+
+.font-medium-emphasis {
+    color: $font-medium-emphasis;
+}
+
+.disabled-color {
+    color: $font-disabled;
+}
+
+.label-text {
+    font-size: 12px;
+    color: $font-low-emphasis;
+}
+
+p {
+    font-size: 14px;
+    color: $font-high-emphasis;
+}
+
+// Definições de tabela
+
+.custom-table {
+    .custom-table-row, .custom-table-row-with-header
+
+{
+    /* Usar: style="--width: XX%;"
+       para definir percentual do espaço da linha que será utilizado pela coluna
+    */
+    .custom-table-col
+
+{
+    & > mat-card
+
+{
+    padding-bottom: 8px;
+}
+
+}
+
+.custom-table-col + .custom-table-col {
+    margin-top: 16px;
+}
+
+@include md {
+    display: flex;
+
+    .custom-table-col + .custom-table-col {
+        margin-left: 16px;
+        margin-top: 0px;
+    }
+
+    .custom-table-col {
+        width: var(--width);
+    }
+}
+
+}
+
+.custom-table-row-with-header {
+    @include md {
+        flex-direction: column;
+
+        .custom-table-row-content {
+            display: flex;
+            flex-direction: row;
+        }
+    }
+}
+
+    .custom-table-row + .custom-table-row, .custom-table-row-with-header + .custom-table-row-with-header,
+    .custom-table-row + .custom-table-row-with-header, .custom-table-row-with-header + .custom-table-row {
+        margin-top: 16px;
+    }
+
+}
+
+// Usados para configurar o box
+
+.container-box {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+
+    @include md {
+        display: inline-flex;
+        flex-direction: column;
+        flex-wrap: initial;
+        align-items: flex-start;
+    }
+}
+
+.box {
+    justify-content: flex-start;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex: 1 1 100%;
+
+    @include md {
+        display: inline-flex;
+        justify-content: initial;
+        flex: initial;
+    }
+}
+
+.item-box {
+    // Faz com que cada elemento cresça em 100% na linha flex-basis: 100%;
+
+    @include md {
+        margin: 16px 32px 0px 0px;
+        flex-basis: initial;
+    }
+}
+/* Faz o mat card ocupar o tamanho completo do componente pai */
+.full-mat-card {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+}
+/* Filhos desse elemento estarão na mesma linha */
+
+.inline-element {
+    white-space: pre-wrap;
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    & > *
+
+{
+    display: inline-block;
+    vertical-align: middle;
+    height: 100%;
+    margin-top: 0px !important;
+    margin-bottom: 0px !important;
+}
+
+& > mat-icon, img {
+    display: inline-flex;
+    vertical-align: middle;
+    height: 100%;
+}
+
+& > button {
+    display: inline-block;
+    vertical-align: middle;
+    height: 100%;
+    margin: 2px !important;
+}
+
+}
+/* Filhos desse elemento estarão nos lados opostos da mesma linha */
+.wrapper {
+    vertical-align: middle;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    /* Usar junto com inline-element se tiver mais de um filho */
+    .left
+
+{
+    margin-left: 0 !important;
+    margin-right: auto !important;
+    height: 100%;
+}
+/* Usar junto com inline-element se tiver mais de um filho */
+.middle {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    height: 100%;
+}
+/* Usar junto com inline-element se tiver mais de um filho */
+.right {
+    margin-left: auto !important;
+    margin-right: 0 !important;
+    height: 100%;
+}
+
+}
+
+/* Componente de tag */
+.tag {
+    width: fit-content;
+    padding-left: 8px;
+    padding-right: 8px;
+    margin-right: 8px;
+    font-size: 12px;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    box-sizing: border-box;
+    border-radius: 4px;
+    white-space: nowrap;
+    background-color: rgba(250, 250, 250, 1);
+}
+
+/* Componente de tag */
+.tag44 {
+    width: fit-content;
+    padding-left: 8px;
+    padding-right: 8px;
+    margin-right: 8px;
+    font-size: 12px;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    box-sizing: border-box;
+    border-radius: 44px;
+    white-space: nowrap;
+    background: rgba(250, 250, 250, 1);
+}
+
+/* Componente de tag */
+.tagRetangular {
+    width: fit-content;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    padding-left: 12px;
+    padding-right: 12px;
+    margin-right: 8px;
+    font-size: 12px;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    box-sizing: border-box;
+    border-radius: 5px;
+    white-space: nowrap;
+}
+
+// Classes de botões
+
+.button, .white-text-button, .black-text-button, .accent-text-button, .inherit-color-button {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    display: flex;
+    text-align: center;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+    & > mat-icon, img
+
+{
+    vertical-align: middle;
+}
+
+}
+
+.white-text-button {
+    color: #FFFFFF !important;
+    background-color: $font-accent;
+}
+
+.black-text-button {
+    color: black;
+    background-color: transparent;
+}
+
+.accent-text-button {
+    color: $font-accent;
+    background-color: transparent;
+}
+
+.inherit-color-button {
+    color: inherit;
+    background-color: inherit;
+}
+
+.button[disabled], .white-text-button[disabled] {
+    background-color: rgba(0, 0, 0, 0.12);
+}
+
+.button[disabled], .white-text-button[disabled], .black-text-button[disabled], .accent-text-button[disabled] {
+    color: rgba(0, 0, 0, 0.26) !important;
+}
+
+
+.no-padding-dialog .mat-dialog-container {
+    padding: 0;
+}
+
+/**
+ * shared/components/message
+ */
+.override-shared-componentes-message-custom-class {
+    background-color: white;
+    padding: 0px !important;
+
+    @include sm {
+        max-width: 356px !important;
+    }
+}
+
+// hyperlinks desabilitados (usado para botões)
+a.disabled {
+    pointer-events: none;
+    cursor: default;
+}
+
+// configurações de textarea padrão do sistema
+.text-area {
+    resize: none !important;
+    height: 20px !important;
+    padding: 0 !important;
+}
+
+.mat-table {
+    width: 100%;
 }

@@ -1,0 +1,175 @@
+@import 'color-variables';
+
+.background-image {
+    position: absolute;
+    object-fit: cover !important;
+    //background-blend-mode: luminosity;
+    width: 100%;
+    height: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.background {
+    position: absolute;
+    right: 0px;
+    left: 0px;
+    min-height: 100vh;
+    bottom: 0px;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+}
+  
+mat-form-field {
+    width: 100%;
+}
+
+button {
+    font-weight: 400 !important;
+    color: white !important;
+    height: 50px !important;
+    font-size: 18px !important;
+    width: 100%;
+}
+
+.mat-icon-opacity {
+    color: #E0E0E0;
+}
+
+mat-card {
+    display: inline-block;
+    height: min-content !important;
+    justify-content: center;
+    height: 100%;
+    width: min-content;
+    align-items: center;
+    justify-content: center;
+}
+
+mat-card-title,
+mat-card-content {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+mat-card-content {
+    width: 256px;
+    flex-direction: column;
+    justify-content: center;
+    padding: 24px 24px 10px;
+}
+
+::ng-deep {
+.mat-form-field:nth-child(1) {
+    margin-bottom: 10px;
+}
+
+.mat-card-header-text {
+    margin: 0px !important;
+}
+}
+
+.error {
+    padding: 16px;
+    width: 300px;
+    color: white;
+    background-color: red;
+}
+
+.header__logo {
+    margin-top: 20px !important;
+    justify-content: center;
+
+>   img {
+        width: 210px;
+    }
+}
+
+.header__title {
+    margin: 40px 0 50px 0 !important;
+
+>   img {
+        width: 210px;
+    }
+}
+
+.footer {
+    width: 100%;
+    margin-top: 10px;
+    font-family: Roboto;
+    text-align: center;
+}
+
+.footer__error-msg {
+    margin: 5px 0px;
+    color: red;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.footer__system-version {
+    margin-top: 10px;
+    color: #91979d;
+}
+
+.dot-flashing {
+    position: relative;
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #fff;
+    animation: dotFlashing 1s infinite linear alternate;
+    animation-delay: .5s;
+    margin: auto;
+}
+
+.dot-flashing::before, .dot-flashing::after {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    top: 0;
+}
+
+.dot-flashing::before {
+    left: -15px;
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #fff;
+    animation: dotFlashing 1s infinite alternate;
+    animation-delay: 0s;
+}
+
+.dot-flashing::after {
+    left: 15px;
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #fff;
+    animation: dotFlashing 1s infinite alternate;
+    animation-delay: 1s;
+}
+
+@keyframes dotFlashing {
+    0% {
+        background-color: #fff;
+    }
+
+    50%, 100% {
+        background-color: #82be84;
+    }
+}
+
+
+
