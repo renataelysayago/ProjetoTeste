@@ -27,7 +27,7 @@
     "angular-common": "^0.1.0",
     "angular-material": "^1.2.5",
     "bootstrap": "^4.6.1",
-    "core-js": "^3.20.2",
+    "core-js": "^3.24.1",
     "jquery": "^3.6.0",
     "node-sass": "^5.0.0",
     "npm": "^8.16.0",
@@ -43,8 +43,8 @@
     "zone.js": "~0.10.2"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "~0.1102.19",
-    "@angular/cli": "^11.2.19",
+    "@angular-devkit/build-angular": "~12.2.18",
+    "@angular/cli": "^12.2.18",
     "@angular/compiler-cli": "^12.2.16",
     "@angular/language-service": "~11.2.14",
     "@types/jasmine": "~3.6.0",
@@ -58,7 +58,7 @@
     "karma-coverage-istanbul-reporter": "~3.0.2",
     "karma-jasmine": "~4.0.0",
     "karma-jasmine-html-reporter": "^1.5.0",
-    "typescript": "4.0.8"
+    "typescript": "4.3.5"
   },
   "optionalDependencies": {
     "protractor": "~5.4.2",
