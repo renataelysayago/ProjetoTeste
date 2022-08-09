@@ -1,10 +1,10 @@
 import { Component, OnInit, Inject, OnDestroy } from '@angular/core';
 import { DOCUMENT, Location } from '@angular/common';
 
-import { ErrorService } from '@services/error.service';
 import { ActivatedRoute } from '@angular/router';
 import { zip } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { ErrorService } from '../../services/error.service';
 
 @Component({
   selector: 'prnta-error',

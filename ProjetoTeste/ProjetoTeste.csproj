@@ -46,6 +46,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <TypeScriptCompile Remove="ClientApp\src\app\shared\services\error.service.ts" />
     <TypeScriptCompile Remove="ClientApp\src\app\shared\services\layout.service.ts" />
   </ItemGroup>
 

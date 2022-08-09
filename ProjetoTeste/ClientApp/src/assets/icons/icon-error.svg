@@ -1,0 +1,10 @@
+<svg width="57" height="44" style="border-radius: 3px" viewBox="0 0 57 44"  xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M54 13L3 13V10L54 10V13Z" fill="black" fill-opacity="0.38"/>
+<rect x="17" y="19" width="3" height="3" fill="black" fill-opacity="0.38"/>
+<rect x="37" y="19" width="3" height="3" fill="black" fill-opacity="0.38"/>
+<rect x="20" y="31" width="3" height="3" fill="black" fill-opacity="0.38"/>
+<rect x="34" y="31" width="3" height="3" fill="black" fill-opacity="0.38"/>
+<rect x="23" y="28" width="11" height="3" fill="black" fill-opacity="0.38"/>
+<rect x="49" y="5" width="3" height="3" fill="black" fill-opacity="0.38"/>
+<path d="M3 3H54V-3H3V3ZM54 3V41H60V3H54ZM54 41H3V47H54V41ZM3 41V3H-3V41H3ZM3 41H3H-3C-3 44.3137 -0.313711 47 3 47V41ZM54 41V47C57.3137 47 60 44.3137 60 41H54ZM54 3H60C60 -0.313707 57.3137 -3 54 -3V3ZM3 -3C-0.313708 -3 -3 -0.313709 -3 3H3V3V-3Z" fill="black" fill-opacity="0.38"/>
+</svg>
